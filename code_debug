@@ -1,4 +1,6 @@
 #!/usr/bin/env ruby
+# frozen_string_literal: true
+
 require 'json'
 
 begin
@@ -16,8 +18,8 @@ begin
   File.open('.vscode/launch.json', 'w') do |f|
     f.puts JSON.pretty_generate(vscode_launch_file)
   end
-rescue ArgumentError => e
+rescue ArgumentError => _e
   puts 'Error: Please pass arg (eg <my_file_name>.rb)'
-rescue Errno::ENOENT => e
+rescue Errno::ENOENT => _e
   puts 'ERROR: Please create a launch file (.vscode/launch.json)'
 end
