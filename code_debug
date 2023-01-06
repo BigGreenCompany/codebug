@@ -1,0 +1,23 @@
+#!/usr/bin/env ruby
+require 'json'
+
+begin
+  program = ARGV[0]
+  raise ArgumentError unless program
+
+  vscode_launch_file = JSON.load_file('.vscode/launch.json')
+  new_config = {
+    "name": "debug #{program}",
+    "type": 'Ruby',
+    "request": 'launch',
+    "program": "${workspaceRoot}/#{program}"
+  }
+  vscode_launch_file['configurations'].push(new_config)
+  File.open('.vscode/launch.json', 'w') do |f|
+    f.puts JSON.pretty_generate(vscode_launch_file)
+  end
+rescue ArgumentError => e
+  puts 'Error: Please pass arg (eg <my_file_name>.rb)'
+rescue Errno::ENOENT => e
+  puts 'ERROR: Please create a launch file (.vscode/launch.json)'
+end
