@@ -16,6 +16,8 @@ Gem::Specification.new do |s|
 
   s.executables = ['codebug']
 
+  gem.add_dependency 'json', '~> 2.6'
+
   s.metadata = {
     'source_code_uri' => 'https://github.com/BigGreenCompany/codebug'
   }
