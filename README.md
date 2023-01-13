@@ -8,5 +8,9 @@ Run `./install` script
 `codebug <my_ruby_file.rb>`
 
 ## Deploy Gem
+Build gem
 `gem build codebug.gemspec`
+Install it locally
 `rake install`
+Push to RubyGems
+`gem push`
