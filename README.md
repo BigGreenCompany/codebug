@@ -6,3 +6,7 @@ Run `./install` script
 
 ## Usage
 `codebug <my_ruby_file.rb>`
+
+## Deploy Gem
+`gem build codebug.gemspec`
+`rake install`
