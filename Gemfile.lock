@@ -4,10 +4,11 @@ GEM
     json (2.6.3)
 
 PLATFORMS
+  x86_64-darwin-20
   x86_64-darwin-21
 
 DEPENDENCIES
   json (~> 2.6)
 
 BUNDLED WITH
-   2.3.20
+   2.3.21

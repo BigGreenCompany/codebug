@@ -1,9 +1,13 @@
+# frozen_string_literal: true
+
+require_relative 'lib/codebug/version'
+
 Gem::Specification.new do |s|
   s.name = 'codebug'
   s.authors = ['Ian Heraty']
-  s.version = '0.0.2'
 
-  s.require_paths = ['lib']
+  s.require_paths = Dir['lib/**/*.rb']
+  s.version = Codebug::VERSION
   s.rubygems_version = '3.3.7'
   s.specification_version = 4
   s.summary = 'a util for creating a vscode launch config for a ruby file'
