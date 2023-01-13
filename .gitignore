@@ -1,3 +1,5 @@
 .vscode/
+.bundle/
+vendor/
 pkg/
 *.gem
