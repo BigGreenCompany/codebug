@@ -8,6 +8,7 @@ begin
   raise ArgumentError unless program
 
   vscode_launch_file = JSON.load_file('.vscode/launch.json')
+  # TODO: add support for other languages (eg javascript)
   new_config = {
     "name": "debug #{program}",
     "type": 'Ruby',
